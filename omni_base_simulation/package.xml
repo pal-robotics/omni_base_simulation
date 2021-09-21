@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>omni_base_simulation</name>
+  <version>0.0.1</version>
+  <description>The omni_base_simulation package</description>
+
+  <maintainer email="antonio.brandi@pal-robotics.com">Antonio Brandi</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>omni_base_gazebo</exec_depend>
+  <exec_depend>pal_hardware_gazebo</exec_depend>
+  <export>
+    <metapackage/>
+  </export>
+
+</package>

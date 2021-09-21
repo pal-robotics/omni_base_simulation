@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>omni_base_controller_configuration_gazebo</name>
+  <version>0.0.1</version>
+  <description>The omni_base_controller_configuration_gazebo package</description>
+
+  <maintainer email="antonio.brandi@pal-robotics.com">Antonio Brandi</maintainer>
+
+  <license>Proprietary</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>omni_base_controller_configuration</exec_depend>
+  <exec_depend>omni_drive_controller</exec_depend>
+
+</package>

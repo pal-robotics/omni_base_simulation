@@ -1,0 +1,6 @@
+velocity:
+  pid_gains:
+     wheel_front_right_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     wheel_front_left_joint:  {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     wheel_back_right_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     wheel_back_left_joint:  {p: 30,  d: 0, i: 0, i_clamp: 1.0}
