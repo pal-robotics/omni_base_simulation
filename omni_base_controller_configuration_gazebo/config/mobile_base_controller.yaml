@@ -1,9 +1,9 @@
 mobile_base_controller:
   type        : "omni_drive_controller/OmniDriveController"
   left_front_wheel  :   'wheel_front_left_joint'
-  left_back_wheel   :   'wheel_back_left_joint'
+  left_back_wheel   :   'wheel_rear_left_joint'
   right_front_wheel :   'wheel_front_right_joint'
-  right_back_wheel :    'wheel_back_right_joint'
+  right_back_wheel :    'wheel_rear_right_joint'
   publish_rate: 0.0
   pose_covariance_diagonal : [0.001, 0.001, 1.0e-3, 1.0e-3, 1.0e-3, 0.01]
   twist_covariance_diagonal: [0.001, 0.001, 1.0e-3, 1.0e-3, 1.0e-3, 0.01]

@@ -12,7 +12,8 @@
 
   <!-- Robot model -->
   <include file="$(find omni_base_description)/robots/upload.launch">
-    <arg name="laser_model" value="$(arg laser_model)"/>
+    <arg name="front_laser_model" value="$(arg laser_model)"/>
+    <arg name="rear_laser_model" value="$(arg laser_model)"/>
     <arg name="multi"  value="$(arg multi)"/>
   </include>
 

@@ -40,7 +40,7 @@
   <!-- Laser Scan Merger -->
   <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen"
     launch-prefix="bash -c 'sleep 5; $0 $@' ">
-    <param name="destination_frame" value="base_laser_link"/>
+    <param name="destination_frame" value="virtual_base_laser_link"/>
     <param name="cloud_destination_topic" value="/merged_cloud"/>
     <param name="scan_destination_topic" value="/scan_raw"/>
     <param name="laserscan_topics" value ="/scan_front_raw /scan_rear_raw" /> 
