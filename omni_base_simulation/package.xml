@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>omni_base_simulation</name>
-  <version>0.0.1</version>
+  <version>0.0.0</version>
   <description>The omni_base_simulation package</description>
 
   <maintainer email="antonio.brandi@pal-robotics.com">Antonio Brandi</maintainer>
