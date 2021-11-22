@@ -7,8 +7,6 @@
 
   <rosparam ns="pal_robot_info" param="type">"omni_base"</rosparam>
 
-  <!-- PID gains -->
-  <rosparam command="load" file="$(find omni_base_controller_configuration_gazebo)/config/pids.yaml"/>
 
   <!-- Robot model -->
   <include file="$(find omni_base_description)/robots/upload.launch">
