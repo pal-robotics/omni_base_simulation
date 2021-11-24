@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2021-11-24)
+------------------
 * removing the needs for pid values for the wheels
 * Contributors: antoniobrandi
 
