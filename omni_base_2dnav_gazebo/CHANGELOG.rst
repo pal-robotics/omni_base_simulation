@@ -2,6 +2,14 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'layered_costmap' into 'ferrum-devel'
+  Adapting to the new vo_server
+  See merge request robots/omni_base_simulation!1
+* Adapting to the new vo_server
+* Contributors: antoniobrandi
+
 0.0.2 (2021-11-24)
 ------------------
 
