@@ -36,7 +36,6 @@
     <arg name="robot_prefix"      value="$(arg robot_namespace)"/>
   </include>
   
-  <!-- Laser filter (empty for public sim) -->
   <!-- Laser Scan Merger -->
   <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen"
     launch-prefix="bash -c 'sleep 5; $0 $@' ">
@@ -53,8 +52,11 @@
     <param name="angle_increment" value ="0.005769" /> 
   </node>
 
+  <!-- Laser filter (empty for public sim) -->
   <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
-    <rosparam file="$(find omni_base_laser_sensors)/config/$(arg laser_model)_filter.yaml" command="load"/>
+    <rosparam file="$(find omni_base_laser_sensors)/config/$(arg laser_model)_filter.yaml"
+              command="load"
+              unless="$(arg public_sim)"/>
     <remap from="scan"          to="scan_raw"/>
     <remap from="scan_filtered" to="scan"/>
   </node>
