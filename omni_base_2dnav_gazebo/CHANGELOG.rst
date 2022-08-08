@@ -2,6 +2,14 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_public_sim' into 'ferrum-devel'
+  remove the loading the filter in the public sim to avoid error
+  See merge request robots/omni_base_simulation!2
+* remove the loading the filter in the public sim to avoid error
+* Contributors: antoniobrandi, thomaspeyrucain
+
 0.0.3 (2022-02-23)
 ------------------
 * Merge branch 'layered_costmap' into 'ferrum-devel'
