@@ -14,5 +14,6 @@
 
   <exec_depend>omni_base_gazebo</exec_depend>
   <exec_depend>omni_base_2dnav</exec_depend>
+  <exec_depend>pal_map_manager</exec_depend>
 
 </package>
