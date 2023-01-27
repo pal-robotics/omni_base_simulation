@@ -2,6 +2,14 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/map-manager' into 'ferrum-devel'
+  Move to map manager
+  See merge request robots/omni_base_simulation!4
+* Move to map manager
+* Contributors: antoniobrandi
+
 0.0.4 (2022-08-08)
 ------------------
 * Merge branch 'fix_public_sim' into 'ferrum-devel'
