@@ -3,26 +3,35 @@
 
   <arg name="state" default="localization"/>
 
-  <arg name="planner"        default="base"/>
-  <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
-  <arg name="localization"   default="amcl"/>
-  <arg name="mapping"        default="karto"/>
-  <arg name="public_sim"     default="false"/>
+  <arg name="planner"         default="base"/>
+  <arg name="global_planner"  default="global_planner"/>
+  <arg name="local_planner"   default="pal"/>
+  <arg name="localization"    default="amcl"/>
+  <arg name="mapping"         default="karto"/>
+  <arg name="public_sim"      default="false"/>
   <arg name="robot_namespace" default=""/>
-  <arg name="laser_model"    default="sick-561"/>
+  <arg name="laser_model"     default="sick-561"/>
+  <arg name="map"             default="$(env HOME)/.pal/omni_base_maps/config"/>
 
-
-  <arg name="map" default="$(env HOME)/.pal/omni_base_maps/config"/>
-
+  <!-- Map -->
   <!-- Localization or Mapping state -->
-  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="omni_base $(arg state) $(arg localization) $(arg mapping) $(arg map) false scan $(arg laser_model)"/>
+  <group if="$(arg public_sim)">
+    <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="omni_base $(arg state) $(arg localization) $(arg mapping) $(arg map) scan $(arg laser_model)"/>
+  </group>
+
+  <group unless="$(arg public_sim)">
+    <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
+      <arg name="map"       value="$(arg map)"/>
+    </include>
+  </group>
 
   <!-- Navigation State Machine -->
   <include file="$(find omni_base_2dnav)/launch/state_machine.launch">
-    <arg name="state" value="$(arg state)"/>
-    <arg name="public_sim" value="$(arg public_sim)"/>
+    <arg name="state"           value="$(arg state)"/>
+    <arg name="public_sim"      value="$(arg public_sim)"/>
+    <arg name="is_sim"          value="true"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
   </include>
 
   <!-- Planning -->

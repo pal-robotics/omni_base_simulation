@@ -14,7 +14,6 @@
   <arg name="local_planner"  default="teb"/> 
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/omni_base_maps/configurations/$(arg world)"/>
-  <arg name="octomap"        default="false"/>
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
