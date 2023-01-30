@@ -2,6 +2,9 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.5 (2023-01-27)
 ------------------
 * Merge branch 'feat/map-manager' into 'ferrum-devel'

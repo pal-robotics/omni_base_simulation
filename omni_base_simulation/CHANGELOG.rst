@@ -2,6 +2,14 @@
 Changelog for package omni_base_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/missing-deps' into 'ferrum-devel'
+  Added missing dependencies
+  See merge request robots/omni_base_simulation!5
+* Update package.xml
+* Contributors: antoniobrandi
+
 0.0.5 (2023-01-27)
 ------------------
 
