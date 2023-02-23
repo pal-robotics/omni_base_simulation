@@ -2,8 +2,8 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.7 (2023-02-23)
+------------------
 * Merge branch 'feat/share-mmap' into 'ferrum-devel'
   deprecating map_configuration_manager
   See merge request robots/omni_base_simulation!6
