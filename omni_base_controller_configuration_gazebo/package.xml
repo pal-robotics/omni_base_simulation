@@ -10,6 +10,7 @@
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>omni_base_controller_configuration</exec_depend>
+  <!--@TODO: Migrate to ROS 2-->
   <!--<exec_depend>omni_drive_controller</exec_depend>-->
 
   <export>

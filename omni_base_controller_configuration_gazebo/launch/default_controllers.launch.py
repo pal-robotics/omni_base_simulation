@@ -29,6 +29,7 @@ def generate_launch_description():
     mobile_base_controller_launch = include_launch_py_description(
         'omni_base_controller_configuration', ['launch', 'mobile_base_controller.launch.py'])
 
+    # Not used because the extra joints were changed to fixed
     # joint_state_broadcaster_launch = include_launch_py_description(
     #     'omni_base_controller_configuration', ['launch', 'joint_state_broadcaster.launch.py'])
 
@@ -37,6 +38,7 @@ def generate_launch_description():
 
     ld.add_action(declare_tf_prefix)
     ld.add_action(mobile_base_controller_launch)
+    # Not used because the extra joints were changed to fixed
     # ld.add_action(joint_state_broadcaster_launch)
 
     return ld

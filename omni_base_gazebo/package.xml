@@ -15,9 +15,9 @@
   <exec_depend>launch_pal</exec_depend>
   <exec_depend>pal_gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_worlds</exec_depend>
-  <!--<exec_depend>omni_base_2dnav</exec_depend>  -->
+  <exec_depend>omni_base_2dnav</exec_depend>
   <exec_depend>omni_base_bringup</exec_depend>
-  <!--<exec_depend>omni_base_controller_configuration</exec_depend>-->
+  <exec_depend>omni_base_controller_configuration</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
