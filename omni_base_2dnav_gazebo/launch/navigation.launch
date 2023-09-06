@@ -10,8 +10,10 @@
   <arg name="mapping"         default="karto"/>
   <arg name="public_sim"      default="false"/>
   <arg name="robot_namespace" default=""/>
+  <arg name="multiple"        default="false"/>
   <arg name="laser_model"     default="sick-561"/>
   <arg name="map"             default="$(env HOME)/.pal/omni_base_maps/config"/>
+  <arg name="is_fleet"        default="false"/>
 
   <!-- Map -->
   <!-- Localization or Mapping state -->
@@ -22,7 +24,9 @@
 
   <group unless="$(arg public_sim)">
     <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
-      <arg name="map"       value="$(arg map)"/>
+      <arg name="map"           value="$(arg map)"/>
+      <arg name="namespace"     value="$(arg robot_namespace)"/>
+      <arg name="use_hostname"  value="false"/>
     </include>
   </group>
 
@@ -31,14 +35,20 @@
     <arg name="state"           value="$(arg state)"/>
     <arg name="public_sim"      value="$(arg public_sim)"/>
     <arg name="is_sim"          value="true"/>
+    <arg name="multiple"        value="$(arg multiple)"/>
     <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
+    <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
+    <arg name="is_fleet"        value="$(arg is_fleet)"/>
   </include>
 
   <!-- Planning -->
   <include file="$(find omni_base_2dnav)/launch/move_$(arg planner).launch">
-    <arg name="global_planner" value="$(arg global_planner)"/>
-    <arg name="local_planner"  value="$(arg local_planner)"/>
-    <arg name="public_sim"     value="$(arg public_sim)"/>
+    <arg name="global_planner"  value="$(arg global_planner)"/>
+    <arg name="local_planner"   value="$(arg local_planner)"/>
+    <arg name="public_sim"      value="$(arg public_sim)"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="multiple"        value="$(arg multiple)"/>
   </include>
 
   <include file="$(find robot_pose)/launch/robot_pose.launch">
@@ -50,8 +60,8 @@
     launch-prefix="bash -c 'sleep 5; $0 $@' ">
     <param name="destination_frame" value="virtual_base_laser_link"/>
     <param name="cloud_destination_topic" value="/merged_cloud"/>
-    <param name="scan_destination_topic" value="/scan_raw"/>
-    <param name="laserscan_topics" value ="/scan_front_raw /scan_rear_raw" /> 
+    <param name="scan_destination_topic" value="/$(arg robot_namespace)/scan_raw"/>
+    <param name="laserscan_topics" value ="/$(arg robot_namespace)/scan_front_raw /$(arg robot_namespace)/scan_rear_raw" /> 
     <param name="time_increment" value ="0.0" /> 
     <param name="scan_time" value ="0.0" /> 
     <param name="range_min" value ="0.05" /> 
@@ -65,7 +75,7 @@
   <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
     <rosparam file="$(find omni_base_laser_sensors)/config/$(arg laser_model)_filter.yaml"
               command="load"
-              unless="$(arg public_sim)"/>
+              unless="$(eval arg('public_sim') or arg('multiple'))"/>
     <remap from="scan"          to="scan_raw"/>
     <remap from="scan_filtered" to="scan"/>
   </node>

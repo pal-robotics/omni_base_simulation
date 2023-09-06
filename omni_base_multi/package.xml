@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <name>omni_base_multi</name>
+  <version>0.0.7</version>
+  <description>The omni_base_multi package</description>
+
+  <maintainer email="antonio.brandi@pal-robotics.com">Antonio Brandi</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>omni_base_gazebo</run_depend>
+</package>
