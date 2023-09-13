@@ -60,8 +60,10 @@
     launch-prefix="bash -c 'sleep 5; $0 $@' ">
     <param name="destination_frame" value="virtual_base_laser_link"/>
     <param name="cloud_destination_topic" value="/merged_cloud"/>
-    <param name="scan_destination_topic" value="/$(arg robot_namespace)/scan_raw"/>
-    <param name="laserscan_topics" value ="/$(arg robot_namespace)/scan_front_raw /$(arg robot_namespace)/scan_rear_raw" /> 
+    <param if="$(arg multiple)" name="scan_destination_topic" value="/$(arg robot_namespace)/scan_raw"/>
+    <param unless="$(arg multiple)" name="scan_destination_topic" value="scan_raw"/>
+    <param if="$(arg multiple)" name="laserscan_topics" value ="/$(arg robot_namespace)/scan_front_raw /$(arg robot_namespace)/scan_rear_raw" /> 
+    <param unless="$(arg multiple)" name="laserscan_topics" value ="/scan_front_raw /scan_rear_raw" /> 
     <param name="time_increment" value ="0.0" /> 
     <param name="scan_time" value ="0.0" /> 
     <param name="range_min" value ="0.05" /> 
