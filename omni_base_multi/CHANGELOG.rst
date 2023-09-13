@@ -2,8 +2,8 @@
 Changelog for package omni_base_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.8 (2023-09-13)
+------------------
 * Merge branch 'feat/omni-base-multi' into 'ferrum-devel'
   support omni_base multi robot
   See merge request robots/omni_base_simulation!7
