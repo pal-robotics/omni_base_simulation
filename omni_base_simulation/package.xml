@@ -13,6 +13,7 @@
   <exec_depend>omni_base_gazebo</exec_depend>
   <exec_depend>pal_hardware_gazebo</exec_depend>
   <exec_depend>omni_base_2dnav_gazebo</exec_depend>
+  <exec_depend>omni_base_multi</exec_depend>
   <export>
     <metapackage/>
   </export>
