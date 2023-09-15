@@ -58,7 +58,8 @@
   <!-- Laser Scan Merger -->
   <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen"
     launch-prefix="bash -c 'sleep 5; $0 $@' ">
-    <param name="destination_frame" value="virtual_base_laser_link"/>
+    <param if="$(arg multiple)" name="destination_frame" value="$(arg robot_namespace)/virtual_base_laser_link"/>
+    <param unless="$(arg multiple)" name="destination_frame" value="virtual_base_laser_link"/>
     <param name="cloud_destination_topic" value="/merged_cloud"/>
     <param if="$(arg multiple)" name="scan_destination_topic" value="/$(arg robot_namespace)/scan_raw"/>
     <param unless="$(arg multiple)" name="scan_destination_topic" value="scan_raw"/>
