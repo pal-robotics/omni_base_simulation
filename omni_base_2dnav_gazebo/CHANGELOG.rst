@@ -2,8 +2,8 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2023-09-15)
+------------------
 * Merge branch 'fix/frame-id' into 'ferrum-devel'
   fix laser scan merger frame id
   See merge request robots/omni_base_simulation!9
