@@ -39,8 +39,9 @@ def generate_launch_description():
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('pal_gazebo_worlds'),
-            'launch'), '/pal_gazebo.launch.py']),
+            get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
+        launch_arguments={
+            'world_name': LaunchConfiguration('world_name')}.items(),
     )
 
     omni_base_spawn = include_launch_py_description(
