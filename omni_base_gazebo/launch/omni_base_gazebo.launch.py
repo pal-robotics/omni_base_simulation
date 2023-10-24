@@ -50,7 +50,7 @@ def generate_launch_description():
         'omni_base_bringup', ['launch', 'omni_base_bringup.launch.py'])
 
     navigation = include_launch_py_description(
-        'omni_base_2dnav', ['launch', 'omni_base_nav_bringup.launch.py'],
+        'omni_base_2dnav', ['launch', 'omni_base_sim_nav_bringup.launch.py'],
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('omni_base_description')
