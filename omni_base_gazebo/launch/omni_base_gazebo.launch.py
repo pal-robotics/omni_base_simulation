@@ -47,10 +47,12 @@ def generate_launch_description():
     omni_base_spawn = include_launch_py_description(
         'omni_base_gazebo', ['launch', 'omni_base_spawn.launch.py'])
     omni_base_bringup = include_launch_py_description(
-        'omni_base_bringup', ['launch', 'omni_base_bringup.launch.py'])
+        'omni_base_bringup', ['launch', 'omni_base_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
         'omni_base_2dnav', ['launch', 'omni_base_sim_nav_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items(),
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('omni_base_description')
