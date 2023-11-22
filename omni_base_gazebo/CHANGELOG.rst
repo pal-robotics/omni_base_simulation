@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2023-11-22)
+------------------
 * Merge branch 'fix/use_sim_time' into 'humble-devel'
   Set use_sim_time true
   See merge request robots/omni_base_simulation!10
