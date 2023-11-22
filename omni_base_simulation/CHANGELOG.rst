@@ -2,6 +2,12 @@
 Changelog for package omni_base_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* omni_base ROS 2
+* omnibase simulation to colcon
+* Contributors: YueErro, andreacapodacqua
+
 0.0.7 (2023-02-23)
 ------------------
 

@@ -2,6 +2,21 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/use_sim_time' into 'humble-devel'
+  Set use_sim_time true
+  See merge request robots/omni_base_simulation!10
+* Set use_sim_time true
+* omni_base ROS 2
+* fix launch nav_sim
+* ROS 2 omni_base simulation
+* enable controller and 2dnav
+* omnibase gazebo to ROS 2:
+  + colcon
+  + launch.py
+* Contributors: Noel Jimenez, YueErro, andreacapodacqua
+
 0.0.7 (2023-02-23)
 ------------------
 
