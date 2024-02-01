@@ -45,8 +45,14 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
-        'omni_base_2dnav', ['launch', 'omni_base_sim_nav_bringup.launch.py'],
-        launch_arguments={'use_sim_time': 'True'}.items(),
+        'omni_base_2dnav', ['launch', 'omni_base_nav_bringup.launch.py'],
+        launch_arguments={
+            'use_sim_time': 'True',
+            'remappings_file': os.path.join(
+                get_package_share_directory('omni_base_2dnav'),
+                'params',
+                'omni_base_remappings_sim.yaml')
+        }.items(),
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('omni_base_description')
