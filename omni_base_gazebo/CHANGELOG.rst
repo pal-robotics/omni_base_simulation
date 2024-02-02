@@ -2,6 +2,18 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/register-components' into 'humble-devel'
+  use single entry point for navigation
+  See merge request robots/omni_base_simulation!13
+* use single entry point for navigation
+* Merge branch 'abr/fix/world-name' into 'humble-devel'
+  move world_name to pal_gazebo_worlds
+  See merge request robots/omni_base_simulation!12
+* move world_name to pal_gazebo_worlds
+* Contributors: Noel Jimenez, antoniobrandi
+
 2.0.0 (2023-11-22)
 ------------------
 * Merge branch 'fix/use_sim_time' into 'humble-devel'
