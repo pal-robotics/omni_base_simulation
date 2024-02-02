@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2024-02-02)
+------------------
 * Merge branch 'feat/register-components' into 'humble-devel'
   use single entry point for navigation
   See merge request robots/omni_base_simulation!13
