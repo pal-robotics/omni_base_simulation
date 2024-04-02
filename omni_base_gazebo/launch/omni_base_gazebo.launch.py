@@ -33,6 +33,11 @@ def generate_launch_description():
         description='Specify if launching Navigation2'
     )
 
+    slam_arg = DeclareLaunchArgument(
+        'slam', default_value='False',
+        description='Specify if launching SLAM Toolbox'
+    )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
@@ -45,15 +50,9 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
-        'omni_base_2dnav', ['launch', 'omni_base_nav_bringup.launch.py'],
-        launch_arguments={
-            'use_sim_time': 'True',
-            'remappings_file': os.path.join(
-                get_package_share_directory('omni_base_2dnav'),
-                'params',
-                'omni_base_remappings_sim.yaml')
-        }.items(),
-        condition=IfCondition(LaunchConfiguration('navigation')))
+        pkg_name="omni_base_2dnav",
+        paths=["launch", "omni_base_nav_bringup.launch.py"],
+        condition=IfCondition(LaunchConfiguration("navigation")))
 
     pkg_path = get_package_prefix('omni_base_description')
     model_path = os.path.join(pkg_path, 'share')
@@ -76,6 +75,7 @@ def generate_launch_description():
     ld.add_action(omni_base_bringup)
 
     ld.add_action(navigation_arg)
+    ld.add_action(slam_arg)
     ld.add_action(navigation)
 
     return ld
