@@ -29,13 +29,8 @@ from launch_pal.include_utils import include_launch_py_description
 def generate_launch_description():
 
     navigation_arg = DeclareLaunchArgument(
-        'navigation', default_value='false',
+        'navigation', default_value='False',
         description='Specify if launching Navigation2'
-    )
-
-    slam_arg = DeclareLaunchArgument(
-        'slam', default_value='False',
-        description='Specify if launching SLAM Toolbox'
     )
 
     gazebo = IncludeLaunchDescription(
@@ -75,7 +70,6 @@ def generate_launch_description():
     ld.add_action(omni_base_bringup)
 
     ld.add_action(navigation_arg)
-    ld.add_action(slam_arg)
     ld.add_action(navigation)
 
     return ld
