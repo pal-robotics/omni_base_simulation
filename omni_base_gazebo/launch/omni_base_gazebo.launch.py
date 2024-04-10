@@ -45,9 +45,9 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
-        pkg_name="omni_base_2dnav",
-        paths=["launch", "omni_base_nav_bringup.launch.py"],
-        condition=IfCondition(LaunchConfiguration("navigation")))
+        pkg_name='omni_base_2dnav',
+        paths=['launch', 'omni_base_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('navigation')))
 
     pkg_path = get_package_prefix('omni_base_description')
     model_path = os.path.join(pkg_path, 'share')

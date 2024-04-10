@@ -66,67 +66,6 @@ Also you can add it to your .bashrc
 Launch gazebo simulation:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py
-```
-
-<img src="doc/media/omni_base_gazebo.png" title="TIAGo OMNI Base simulation" width="85%">
-
-You can launch gazebo simulation using PAL office gazebo world by executing:
-
-```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py world_name:=pal_office
-```
-
-To move the robot you can use the following command from another terminal:
-
-```console
-// @TODO
-```
-
-The velocities can be modified by changing the values of x, y and z.
-
-
-### Navigation 2
-
-You can launch TIAGo OMNI Base navigation by executing:
-
-```console
-ros2 launch omni_base_2dnav omni_base_nav_bringup.launch.py
-```
-
-Then, you can send a goal:
-
-- With rviz2
-
-<img src="doc/media/rviz_send_goal.gif" title="Send goal with rviz2" width="85%">
-
-- By using Navigation 2 API. For further information see [Navigation 2 Tutorials](https://navigation.ros.org/tutorials/index.html)
-
-### Simulation + Navigation 2
-
-You can also start the simulation and navigation together by using:
-
-```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py navigation:=true
-```
-
-Then, goals can be sent in the same way.
-
-### Simulation + Navigation 2 + SLAM 
-
-You can also start the simulation navigation and slam together by using:
-
-```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py navigation:=true slam:=true
-```
-
-## Public Simulation
-
-### Standalone
-
-Launch gazebo simulation:
-
-```console
 ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true
 ```
 
@@ -168,7 +107,16 @@ Then, you can send a goal:
 You can also start the simulation and navigation together by using:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py navigation:=true is_public_sim:=true
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true navigation:=true
 ```
 
 Then, goals can be sent in the same way.
+
+### Simulation + Navigation 2 + SLAM 
+
+You can also start the simulation navigation and slam together by using:
+
+```console
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true navigation:=true slam:=true
+```
+To use private simulation you can avoid to set is_public_sim argument
