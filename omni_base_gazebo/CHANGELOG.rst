@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.2 (2024-04-10)
+------------------
 * Merge branch 'feat/ros2-pipelines' into 'humble-devel'
   Feat/ros2 pipelines
   See merge request robots/omni_base_simulation!14
