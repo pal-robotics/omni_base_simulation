@@ -2,6 +2,16 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/ros2-pipelines' into 'humble-devel'
+  Feat/ros2 pipelines
+  See merge request robots/omni_base_simulation!14
+* cosmetic and update readme
+* removed slam arg
+* navigation pipeline integration for private sim
+* Contributors: andreacapodacqua
+
 2.0.1 (2024-02-02)
 ------------------
 * Merge branch 'feat/register-components' into 'humble-devel'
