@@ -80,7 +80,7 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true worl
 To move the robot you can use the following command from another terminal:
 
 ```console
-// @TODO
+ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 1}, angular: {z: 0}}' -r10
 ```
 
 The velocities can be modified by changing the values of x, y and z.
