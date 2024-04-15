@@ -16,7 +16,7 @@ import os
 from os import environ, pathsep
 
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
-
+from launch_pal.actions import CheckPublicSim
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 from launch.conditions import IfCondition
@@ -33,10 +33,18 @@ def generate_launch_description():
         description='Specify if launching Navigation2'
     )
 
+    is_public_sim = DeclareLaunchArgument(
+        name='is_public_sim',
+        default_value='false',
+        description='Enable public simulation.',
+    )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'), 'launch'), '/pal_gazebo.launch.py']),
     )
+
+    check_public_sim = CheckPublicSim()
 
     omni_base_spawn = include_launch_py_description(
         'omni_base_gazebo', ['launch', 'omni_base_spawn.launch.py'])
@@ -65,6 +73,8 @@ def generate_launch_description():
     # Using this prevents shared library from being found
     # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', omni_base_resource_path))
 
+    ld.add_action(is_public_sim)
+    ld.add_action(check_public_sim)
     ld.add_action(gazebo)
     ld.add_action(omni_base_spawn)
     ld.add_action(omni_base_bringup)
