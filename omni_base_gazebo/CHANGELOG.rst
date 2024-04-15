@@ -2,6 +2,14 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'omm/feat/public_sim_control' into 'humble-devel'
+  is_public_sim check
+  See merge request robots/omni_base_simulation!15
+* Using new launch action
+* Contributors: Oscar, davidterkuile
+
 2.0.2 (2024-04-10)
 ------------------
 * Merge branch 'feat/ros2-pipelines' into 'humble-devel'
