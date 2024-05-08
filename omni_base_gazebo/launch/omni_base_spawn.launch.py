@@ -19,10 +19,11 @@ from launch.substitutions import LaunchConfiguration
 
 from launch_ros.actions import Node
 
+
 def generate_launch_description():
     # This format doesn't work because because we have to expand gzpose into
     # different args for spawn_entity.py
-    
+
     pose = {
         'x': LaunchConfiguration('x', default='0.0'),
         'y': LaunchConfiguration('y', default='0.0'),
@@ -31,7 +32,7 @@ def generate_launch_description():
         'P': LaunchConfiguration('P', default='0.0'),
         'Y': LaunchConfiguration('Y', default='0.0'),
     }
-    
+
     model_name = DeclareLaunchArgument(
         'model_name', default_value='omni_base',
         description='Gazebo model name'
@@ -42,24 +43,24 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description', '-entity',
                                    LaunchConfiguration('model_name'),
                                    '-x',
-                                    pose['x'],
-                                    '-y',
-                                    pose['y'],
-                                    '-z',
-                                    pose['z'],
-                                    '-R',
-                                    pose['R'],
-                                    '-P',
-                                    pose['P'],
-                                    '-Y',
-                                    pose['Y'],
+                                   pose['x'],
+                                   '-y',
+                                   pose['y'],
+                                   '-z',
+                                   pose['z'],
+                                   '-R',
+                                   pose['R'],
+                                   '-P',
+                                   pose['P'],
+                                   '-Y',
+                                   pose['Y'],
                                    ],
                         output='screen')
 
     # Create the launch description and populate
     ld = LaunchDescription()
-    
+
     ld.add_action(model_name)
     ld.add_action(spawn_entity)
-    
+
     return ld
