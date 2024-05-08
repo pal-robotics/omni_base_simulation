@@ -2,6 +2,17 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'man/omni-base-gazebo-spawn' into 'humble-devel'
+  added pose conifiguration in spawn_entity args
+  See merge request robots/omni_base_simulation!16
+* added pose configration in spawn entity
+* added pose variables in spawn entity
+* added pose arguments in spawn_entity
+* added pose conifiguration in spawn_entity args
+* Contributors: antoniobrandi, martinaannicelli
+
 2.0.3 (2024-04-15)
 ------------------
 * Merge branch 'omm/feat/public_sim_control' into 'humble-devel'
