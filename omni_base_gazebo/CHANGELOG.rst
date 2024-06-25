@@ -2,6 +2,16 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/standardize-pkg' into 'humble-devel'
+  Dtk/standardize pkg
+  See merge request robots/omni_base_simulation!17
+* Fix linters
+* Remove unnecessary dependency
+* Updat launch structure
+* Contributors: David ter Kuile, davidterkuile
+
 2.0.4 (2024-05-08)
 ------------------
 * Merge branch 'man/omni-base-gazebo-spawn' into 'humble-devel'
