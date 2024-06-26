@@ -2,6 +2,14 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/move-robot-args' into 'humble-devel'
+  Dtk/move robot args
+  See merge request robots/omni_base_simulation!18
+* Change import for launch args
+* Contributors: David ter Kuile, davidterkuile
+
 2.0.5 (2024-06-25)
 ------------------
 * Merge branch 'dtk/standardize-pkg' into 'humble-devel'
