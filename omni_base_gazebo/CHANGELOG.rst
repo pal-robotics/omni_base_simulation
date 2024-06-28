@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.7 (2024-06-28)
+------------------
 * Merge branch 'dtk/add-on-module' into 'humble-devel'
   Change rgbd sensors to add-on-module
   See merge request robots/omni_base_simulation!19
