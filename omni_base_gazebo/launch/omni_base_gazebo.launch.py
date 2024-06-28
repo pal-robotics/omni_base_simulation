@@ -38,6 +38,7 @@ class LaunchArguments(LaunchArgumentsBase):
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     navigation: DeclareLaunchArgument = CommonArgs.navigation
     slam: DeclareLaunchArgument = CommonArgs.slam
+    advanced_navigation: DeclareLaunchArgument = CommonArgs.advanced_navigation
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
@@ -101,6 +102,13 @@ def declare_actions(
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     launch_description.add_action(navigation)
+
+    advanced_navigation = include_scoped_launch_py_description(
+        pkg_name='omni_base_advanced_2dnav',
+        paths=['launch', 'omni_base_advanced_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('advanced_navigation')))
+
+    launch_description.add_action(advanced_navigation)
 
     robot_spawn = include_scoped_launch_py_description(
         pkg_name='omni_base_gazebo',
