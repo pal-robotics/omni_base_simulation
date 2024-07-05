@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add slam argument for navigation
+* Contributors: Noel Jimenez
+
 2.0.7 (2024-06-28)
 ------------------
 * Merge branch 'dtk/add-on-module' into 'humble-devel'
