@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.8 (2024-07-05)
+------------------
 * Add slam argument for navigation
 * Contributors: Noel Jimenez
 
