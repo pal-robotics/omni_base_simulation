@@ -2,6 +2,14 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'abr/feat/advanced-navigation' into 'humble-devel'
+  added advanced navigation
+  See merge request robots/omni_base_simulation!20
+* added advanced navigation
+* Contributors: antoniobrandi, davidterkuile
+
 2.0.8 (2024-07-05)
 ------------------
 * Add slam argument for navigation
