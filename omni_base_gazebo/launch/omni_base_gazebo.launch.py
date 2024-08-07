@@ -20,12 +20,12 @@ from ament_index_python.packages import get_package_prefix
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
-from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_pal.actions import CheckPublicSim
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_ros.actions import Node
 from omni_base_description.launch_arguments import OmniBaseArgs
 
 
@@ -87,6 +87,16 @@ def declare_actions(
         })
 
     launch_description.add_action(gazebo)
+
+    twist_relay = Node(
+        package='topic_tools',
+        executable='relay_field',
+        name='twist_relay',
+        arguments=['/mobile_base_controller/cmd_vel', '/mobile_base_controller/cmd_vel_unstamped',
+                   'geometry_msgs/Twist', '{linear: m.twist.linear, angular: m.twist.angular}'],
+    )
+
+    launch_description.add_action(twist_relay)
 
     navigation = include_scoped_launch_py_description(
         pkg_name='omni_base_2dnav',
