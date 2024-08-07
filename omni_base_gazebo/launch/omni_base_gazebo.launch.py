@@ -20,7 +20,7 @@ from ament_index_python.packages import get_package_prefix
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
-from launch.conditions import IfCondition
+from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
 from launch_pal.actions import CheckPublicSim
 from launch_pal.robot_arguments import CommonArgs
@@ -95,6 +95,7 @@ def declare_actions(
         name='twist_relay',
         arguments=['/mobile_base_controller/cmd_vel', '/mobile_base_controller/cmd_vel_unstamped',
                    'geometry_msgs/Twist', '{linear: m.twist.linear, angular: m.twist.angular}'],
+        condition=UnlessCondition(LaunchConfiguration('is_public_sim'))
     )
 
     launch_description.add_action(twist_relay)
