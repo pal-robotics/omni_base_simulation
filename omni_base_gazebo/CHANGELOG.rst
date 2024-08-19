@@ -2,6 +2,16 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'abr/fix/twist' into 'humble-devel'
+  using relay_field for twist message
+  See merge request robots/omni_base_simulation!22
+* use relay_field only for private sim
+* typo
+* using relay_field for twist message
+* Contributors: antoniobrandi
+
 2.0.9 (2024-07-08)
 ------------------
 * Merge branch 'abr/feat/advanced-navigation' into 'humble-devel'
