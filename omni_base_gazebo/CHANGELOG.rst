@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.10 (2024-08-19)
+-------------------
 * Merge branch 'abr/fix/twist' into 'humble-devel'
   using relay_field for twist message
   See merge request robots/omni_base_simulation!22
