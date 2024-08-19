@@ -19,7 +19,6 @@
   <exec_depend>omni_base_2dnav</exec_depend>
   <exec_depend>omni_base_bringup</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
-  <exec_depend>topic_tools</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
