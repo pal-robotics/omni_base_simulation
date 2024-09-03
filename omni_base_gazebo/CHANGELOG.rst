@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.0 (2024-09-03)
+------------------
 * Remove twist relay from simulation and launch in mobile_base_controller
 * Contributors: David ter Kuile
 
