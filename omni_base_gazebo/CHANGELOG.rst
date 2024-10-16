@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.0 (2024-10-16)
+------------------
 * Merge branch 'man/feat/advanced-nav' into 'humble-devel'
   added advanced nav launch arg to navigation
   See merge request robots/omni_base_simulation!25
