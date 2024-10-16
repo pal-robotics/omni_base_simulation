@@ -2,6 +2,14 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'man/feat/advanced-nav' into 'humble-devel'
+  added advanced nav launch arg to navigation
+  See merge request robots/omni_base_simulation!25
+* added advanced nav launch arg to navigation
+* Contributors: antoniobrandi, martinaannicelli
+
 2.1.0 (2024-09-03)
 ------------------
 * Remove twist relay from simulation and launch in mobile_base_controller
