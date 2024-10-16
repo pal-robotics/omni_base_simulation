@@ -95,6 +95,7 @@ def declare_actions(
             'robot_name':  robot_name,
             'laser':  launch_args.laser_model,
             'is_public_sim': launch_args.is_public_sim,
+            'advanced_navigation': launch_args.advanced_navigation,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'world_name': launch_args.world_name,
             'slam': launch_args.slam,
