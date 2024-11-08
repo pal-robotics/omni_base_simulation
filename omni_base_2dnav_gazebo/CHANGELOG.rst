@@ -2,6 +2,14 @@
 Changelog for package omni_base_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feature/highways-for-every-tbase' into 'ferrum-devel'
+  Feature/highways for every tbase
+  See merge request robots/omni_base_simulation!26
+* feat: highways server
+* Contributors: josegarcia
+
 0.0.9 (2023-09-15)
 ------------------
 * Merge branch 'fix/frame-id' into 'ferrum-devel'
