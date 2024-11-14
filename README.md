@@ -66,7 +66,7 @@ Also you can add it to your .bashrc
 Launch gazebo simulation:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True
 ```
 
 <img src="doc/media/omni_base_gazebo.png" title="TIAGo OMNI Base simulation" width="85%">
@@ -74,7 +74,7 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true
 You can launch gazebo simulation using PAL office gazebo world by executing:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true world_name:=pal_office
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True world_name:=pal_office
 ```
 
 To move the robot you can use the following command from another terminal:
@@ -91,7 +91,7 @@ The velocities can be modified by changing the values of x, y and z.
 You can launch TIAGo OMNI Base navigation by executing:
 
 ```console
-ros2 launch omni_base_2dnav omni_base_nav_bringup.launch.py is_public_sim:=true
+ros2 launch omni_base_2dnav omni_base_nav_bringup.launch.py is_public_sim:=True
 ```
 
 Then, you can send a goal:
@@ -107,7 +107,7 @@ Then, you can send a goal:
 You can also start the simulation and navigation together by using:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true navigation:=true
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True
 ```
 
 Then, goals can be sent in the same way.
@@ -117,6 +117,6 @@ Then, goals can be sent in the same way.
 You can also start the simulation navigation and slam together by using:
 
 ```console
-ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=true navigation:=true slam:=true
+ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
 To use private simulation you can avoid to set is_public_sim argument
