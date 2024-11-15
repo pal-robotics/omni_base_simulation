@@ -2,6 +2,9 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.0 (2024-10-16)
 ------------------
 * Merge branch 'man/feat/advanced-nav' into 'humble-devel'
