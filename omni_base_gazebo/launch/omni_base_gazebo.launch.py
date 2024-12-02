@@ -21,7 +21,7 @@ from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.actions import CheckPublicSim
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
@@ -39,6 +39,7 @@ class LaunchArguments(LaunchArgumentsBase):
     navigation: DeclareLaunchArgument = CommonArgs.navigation
     slam: DeclareLaunchArgument = CommonArgs.slam
     advanced_navigation: DeclareLaunchArgument = CommonArgs.advanced_navigation
+    docking: DeclareLaunchArgument = CommonArgs.docking
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
@@ -110,6 +111,24 @@ def declare_actions(
         condition=IfCondition(LaunchConfiguration('advanced_navigation')))
 
     launch_description.add_action(advanced_navigation)
+
+    docking = include_scoped_launch_py_description(
+        pkg_name='omni_base_docking',
+        paths=['launch', 'omni_base_docking_bringup.launch.py'],
+        condition=IfCondition(
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('docking'),
+                    "' == 'True' or '",
+                    LaunchConfiguration('advanced_navigation'),
+                    "' == 'True'"
+                ]
+            )
+        )
+    )
+
+    launch_description.add_action(docking)
 
     robot_spawn = include_scoped_launch_py_description(
         pkg_name='omni_base_gazebo',
