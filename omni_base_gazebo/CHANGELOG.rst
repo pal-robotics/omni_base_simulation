@@ -2,6 +2,15 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'abr/feat/docking' into 'humble-devel'
+  using docking arg
+  See merge request robots/omni_base_simulation!28
+* always start docking with adv navigation
+* using docking arg
+* Contributors: antoniobrandi
+
 2.2.1 (2024-11-15)
 ------------------
 
