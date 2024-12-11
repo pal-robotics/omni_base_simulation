@@ -119,4 +119,3 @@ You can also start the simulation navigation and slam together by using:
 ```console
 ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
-To use private simulation you can avoid to set is_public_sim argument
