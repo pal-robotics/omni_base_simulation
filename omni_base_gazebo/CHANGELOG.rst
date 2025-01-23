@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* support camera model
+* Contributors: antoniobrandi
+
 2.3.0 (2024-12-02)
 ------------------
 * Merge branch 'abr/feat/docking' into 'humble-devel'
