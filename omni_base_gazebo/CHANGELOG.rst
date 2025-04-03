@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* pal_configuration adoption
+* Contributors: antoniobrandi
+
 2.4.0 (2025-01-23)
 ------------------
 * support camera model
