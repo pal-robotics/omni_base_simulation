@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* store robot_info in tmp
+* Contributors: antoniobrandi
+
 2.5.0 (2025-04-03)
 ------------------
 * pal_configuration adoption
