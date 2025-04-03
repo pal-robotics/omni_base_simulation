@@ -13,12 +13,14 @@
   <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
   <exec_depend>launch_pal</exec_depend>
   <exec_depend>pal_gazebo_plugins</exec_depend>
   <exec_depend>pal_gazebo_worlds</exec_depend>
   <exec_depend>omni_base_2dnav</exec_depend>
   <exec_depend>omni_base_bringup</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
+  <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

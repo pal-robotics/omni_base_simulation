@@ -1,0 +1,9 @@
+robot_info_publisher:
+  ros__parameters:
+    robot_type: omni_base
+    base_type: omni_base
+    add_on_module: no-add-on
+    laser_model: sick-571
+    camera_model: no-camera
+    advanced_navigation: False
+    has_dock: False
