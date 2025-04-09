@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* rviz_typo
+* Contributors: salvatorepiccolo
+
 2.6.0 (2025-04-03)
 ------------------
 * store robot_info in tmp
