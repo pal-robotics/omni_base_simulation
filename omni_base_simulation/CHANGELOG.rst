@@ -2,6 +2,11 @@
 Changelog for package omni_base_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update maintainer
+* Contributors: andreacapodacqua
+
 2.6.1 (2025-04-09)
 ------------------
 

@@ -2,6 +2,12 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update maintainer
+* fix deps
+* Contributors: andreacapodacqua
+
 2.6.1 (2025-04-09)
 ------------------
 * rviz_typo
