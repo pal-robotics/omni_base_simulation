@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.6.2 (2025-05-05)
+------------------
 * update maintainer
 * fix deps
 * Contributors: andreacapodacqua
