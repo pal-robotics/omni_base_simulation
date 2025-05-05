@@ -5,7 +5,7 @@
   <description>The omni_base_gazebo package</description>
   <author email="yue.erro@pal-robotics.com">Yue Erro</author>
   <author email="andrea.capodacqua@pal-robotics.com">Andrea Capodacqua</author>
-  <maintainer email="yue.erro@pal-robotics.com">Yue Erro</maintainer>
+  <maintainer email="andrea.capodacqua@pal-robotics.com">Andrea Capodacqua</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
