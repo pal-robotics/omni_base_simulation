@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add use_sim_time to robot_info
+* Contributors: antoniobrandi
+
 2.7.0 (2025-05-06)
 ------------------
 * rviz use_sim_time
