@@ -64,6 +64,7 @@ def private_navigation(context, *args, **kwargs):
     add_on_module = read_launch_argument('add_on_module', context)
     docking = read_launch_argument('docking', context)
     advanced_navigation = read_launch_argument('advanced_navigation', context)
+    use_sim_time = read_launch_argument('use_sim_time', context)
     rviz_config_pkg = 'omni_base_2dnav'
     if advanced_navigation == 'True':
         rviz_config_pkg = 'omni_base_advanced_2dnav'
@@ -78,6 +79,7 @@ def private_navigation(context, *args, **kwargs):
                 "camera_model": camera_model,
                 "advanced_navigation": (advanced_navigation == 'True'),
                 "has_dock": (docking == 'True'),
+                "use_sim_time": (use_sim_time == 'True'),
             }
         }
     }
