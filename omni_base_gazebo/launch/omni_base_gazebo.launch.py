@@ -257,7 +257,7 @@ def declare_actions(
     launch_description.add_action(public_sim_check)
 
     robot_name = 'omni_base'
-    packages = ['omni_base_description']
+    packages = ['omni_base_description', 'pal_urdf_utils']
 
     model_path = get_model_paths(packages)
 
