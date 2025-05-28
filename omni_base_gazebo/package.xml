@@ -22,6 +22,7 @@
   <exec_depend>omni_base_laser_sensors</exec_depend>
   <exec_depend>omni_base_bringup</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
+  <exec_depend>pal_urdf_utils</exec_depend>
   <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
