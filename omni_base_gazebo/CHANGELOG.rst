@@ -2,6 +2,12 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add pal_urdf_utils dependency
+* Add pal_urdf_utils as env var path for gazebo
+* Contributors: Aina
+
 2.8.0 (2025-05-07)
 ------------------
 * add use_sim_time to robot_info
