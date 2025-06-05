@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.8.1 (2025-06-05)
+------------------
 * Add pal_urdf_utils dependency
 * Add pal_urdf_utils as env var path for gazebo
 * Contributors: Aina
