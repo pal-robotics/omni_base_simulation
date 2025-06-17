@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_ros.actions import Node
@@ -32,6 +32,7 @@ class LaunchArguments(LaunchArgumentsBase):
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
     yaw: DeclareLaunchArgument = CommonArgs.yaw
+    namespace: DeclareLaunchArgument = CommonArgs.namespace
 
 
 def generate_launch_description():
@@ -53,11 +54,25 @@ def declare_actions(
     robot_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
+        namespace=LaunchConfiguration('namespace'),
         arguments=[
             '-topic',
             'robot_description',
             '-entity',
-            LaunchConfiguration('robot_name'),
+            # 'namespace' if $arg('namespace') is not empty else 'robot_name'
+            PythonExpression(
+                [
+                    "'",
+                    LaunchConfiguration('namespace'),
+                    "' if '",
+                    LaunchConfiguration('namespace'),
+                    "' else '",
+                    LaunchConfiguration('robot_name'),
+                    "'"
+                ]
+            ),
+            '-robot_namespace',
+            LaunchConfiguration('namespace'),
             '-x', LaunchConfiguration('x'),
             '-y', LaunchConfiguration('y'),
             '-Y', LaunchConfiguration('yaw'),
