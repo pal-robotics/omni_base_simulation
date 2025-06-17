@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Support Namespaces
+* Contributors: antoniobrandi
+
 2.8.1 (2025-06-05)
 ------------------
 * Add pal_urdf_utils dependency
