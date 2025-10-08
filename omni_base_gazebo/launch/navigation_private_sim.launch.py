@@ -44,6 +44,7 @@ class LaunchArguments(LaunchArgumentsBase):
     docking: DeclareLaunchArgument = CommonArgs.docking
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    rviz: DeclareLaunchArgument = CommonArgs.rviz
 
 
 def generate_launch_description():
@@ -233,6 +234,7 @@ def declare_actions(
     launch_description.add_action(advanced_navigation)
 
     # RViz
+
     rviz_cfg_pkg = PythonExpression([
         "'omni_base_advanced_2dnav' if '",
         LaunchConfiguration('advanced_navigation'),
@@ -254,6 +256,7 @@ def declare_actions(
             ('/tf', 'tf'),
             ('/tf_static', 'tf_static'),
         ],
+        condition=IfCondition(LaunchConfiguration('rviz'))
     )
 
     launch_description.add_action(rviz)
