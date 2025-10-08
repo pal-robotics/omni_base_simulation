@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added gzclient to gazebo node
+* Contributors: martinaannicelli
+
 2.9.0 (2025-06-17)
 ------------------
 * Support Namespaces
