@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added missing dep for public sim
+* Contributors: andreacapodacqua
+
 2.10.0 (2025-10-08)
 -------------------
 * added gzclient to gazebo node
