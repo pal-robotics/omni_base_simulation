@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.10.1 (2025-10-27)
+-------------------
 * added missing dep for public sim
 * Contributors: andreacapodacqua
 
