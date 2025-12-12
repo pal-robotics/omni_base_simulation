@@ -52,6 +52,7 @@ class LaunchArguments(LaunchArgumentsBase):
     docking: DeclareLaunchArgument = CommonArgs.docking
     x: DeclareLaunchArgument = CommonArgs.x
     y: DeclareLaunchArgument = CommonArgs.y
+    z: DeclareLaunchArgument = CommonArgs.z
     yaw: DeclareLaunchArgument = CommonArgs.yaw
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     rviz: DeclareLaunchArgument = CommonArgs.rviz
@@ -114,6 +115,7 @@ def declare_actions(
             'robot_name': robot_name,
             'x': launch_args.x,
             'y': launch_args.y,
+            'z': launch_args.z,
             'yaw': launch_args.yaw,
         }
     )

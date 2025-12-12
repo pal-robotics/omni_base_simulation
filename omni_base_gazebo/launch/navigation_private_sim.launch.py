@@ -233,8 +233,28 @@ def declare_actions(
 
     launch_description.add_action(advanced_navigation)
 
-    # RViz
+    # RGBD Sensors
+    rgbd = include_scoped_launch_py_description(
+        pkg_name='omni_base_rgbd_sensors',
+        paths=['launch', 'rgbd_sim.launch.py'],
+        launch_arguments={
+            'namespace': launch_args.namespace,
+            'wheel_model': launch_args.wheel_model,
+            'camera_model': launch_args.camera_model,
+            'add_on_module': launch_args.add_on_module,
+            'laser_model': launch_args.laser_model,
+            'docking': launch_args.docking,
+            'advanced_navigation': launch_args.advanced_navigation,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+        },
+        env_vars=[robot_info_env],
+        condition=IfCondition(PythonExpression(
+            ["'", LaunchConfiguration('add_on_module'), "' in ['cobra', 'horizon']"]))
+    )
 
+    launch_description.add_action(rgbd)
+
+    # RViz
     rviz_cfg_pkg = PythonExpression([
         "'omni_base_advanced_2dnav' if '",
         LaunchConfiguration('advanced_navigation'),
