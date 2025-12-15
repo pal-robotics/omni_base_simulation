@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* missing deps
+* Contributors: antoniobrandi
+
 2.11.0 (2025-12-12)
 -------------------
 * Point Cloud filter pipeline
