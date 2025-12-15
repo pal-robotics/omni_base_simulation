@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.11.1 (2025-12-15)
+-------------------
 * missing deps
 * Contributors: antoniobrandi
 
