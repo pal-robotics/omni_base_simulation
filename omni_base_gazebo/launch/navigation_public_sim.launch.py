@@ -32,6 +32,7 @@ class LaunchArguments(LaunchArgumentsBase):
     slam: DeclareLaunchArgument = CommonArgs.slam
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     rviz: DeclareLaunchArgument = CommonArgs.rviz
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 
 def generate_launch_description():

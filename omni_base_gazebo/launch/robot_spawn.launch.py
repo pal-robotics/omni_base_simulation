@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import os
 
 from dataclasses import dataclass
 
+from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
+from launch.conditions import LaunchConfigurationEquals
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
@@ -34,6 +37,7 @@ class LaunchArguments(LaunchArgumentsBase):
     z: DeclareLaunchArgument = CommonArgs.z
     yaw: DeclareLaunchArgument = CommonArgs.yaw
     namespace: DeclareLaunchArgument = CommonArgs.namespace
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 
 def generate_launch_description():
@@ -79,9 +83,43 @@ def declare_actions(
             '-z', LaunchConfiguration('z'),
             '-Y', LaunchConfiguration('yaw'),
         ],
-
+        condition=LaunchConfigurationEquals('gazebo_version', 'classic'),
         output='screen',
     )
     launch_description.add_action(robot_entity)
+
+    gazebo_spawn_robot = Node(
+        package='ros_gz_sim',
+        executable='create',
+        output='screen',
+        arguments=[
+            '-model',
+            LaunchConfiguration('robot_name'),
+            '-topic',
+            'robot_description',
+        ],
+        condition=LaunchConfigurationEquals('gazebo_version', 'gazebo'),
+    )
+    launch_description.add_action(gazebo_spawn_robot)
+
+    # TODO: Add support for namespace
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        name='bridge_ros_gz',
+        parameters=[
+            {
+                'config_file': os.path.join(
+                    get_package_share_directory('omni_base_gazebo'),
+                    'config',
+                    'omni_base_gz_bridge.yaml',
+                ),
+                'use_sim_time': True,
+            }
+        ],
+        output='screen',
+        condition=LaunchConfigurationEquals('gazebo_version', 'gazebo'),
+    )
+    launch_description.add_action(bridge)
 
     return
