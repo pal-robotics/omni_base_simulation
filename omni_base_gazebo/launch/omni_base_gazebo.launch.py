@@ -73,6 +73,7 @@ def generate_launch_description():
 
     return ld
 
+
 def start_gazebo(context, *args, **kwargs):
     world_name = read_launch_argument('world_name', context)
     gzclient = read_launch_argument('gzclient', context)
@@ -122,7 +123,6 @@ def declare_actions(
     robot_name = 'omni_base'
 
     launch_description.add_action(OpaqueFunction(function=start_gazebo))
-
 
     robot_spawn = include_scoped_launch_py_description(
         pkg_name='omni_base_gazebo',
