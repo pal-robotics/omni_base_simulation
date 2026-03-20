@@ -2,6 +2,13 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix linting
+* publish odom
+* add parameters for gazebo version
+* Contributors: thomasung
+
 2.11.1 (2025-12-15)
 -------------------
 * missing deps
