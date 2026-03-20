@@ -21,6 +21,7 @@ from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
+    OpaqueFunction,
     SetEnvironmentVariable,
     SetLaunchConfiguration,
 )
@@ -33,7 +34,7 @@ from launch.substitutions import (
 from launch_pal.actions import CheckPublicSim
 from launch_pal.conditions import UnlessNodeRunning
 from launch_pal.robot_arguments import CommonArgs
-from launch_pal.arg_utils import LaunchArgumentsBase
+from launch_pal.arg_utils import LaunchArgumentsBase, read_launch_argument
 from launch_pal.include_utils import include_scoped_launch_py_description
 from omni_base_description.launch_arguments import OmniBaseArgs
 
@@ -57,6 +58,7 @@ class LaunchArguments(LaunchArgumentsBase):
     namespace: DeclareLaunchArgument = CommonArgs.namespace
     rviz: DeclareLaunchArgument = CommonArgs.rviz
     gzclient: DeclareLaunchArgument = CommonArgs.gzclient
+    gazebo_version: DeclareLaunchArgument = CommonArgs.gazebo_version
 
 
 def generate_launch_description():
@@ -72,6 +74,40 @@ def generate_launch_description():
     return ld
 
 
+def start_gazebo(context, *args, **kwargs):
+    world_name = read_launch_argument('world_name', context)
+    gzclient = read_launch_argument('gzclient', context)
+    gazebo_version = read_launch_argument('gazebo_version', context)
+
+    packages = ['omni_base_description', 'pal_urdf_utils']
+    model_path = get_model_paths(packages)
+
+    if gazebo_version == 'gazebo':
+        PATH = 'GZ_SIM_RESOURCE_PATH'
+    else:
+        PATH = 'GAZEBO_MODEL_PATH'
+
+    if PATH in environ:
+        model_path += pathsep + environ[PATH]
+
+    gazebo_model_path_env_var = SetEnvironmentVariable(PATH, model_path)
+
+    gazebo = include_scoped_launch_py_description(
+        pkg_name='pal_gazebo_worlds',
+        paths=['launch', 'pal_gazebo.launch.py'],
+        env_vars=[gazebo_model_path_env_var],
+        launch_arguments={
+            'world_name': world_name,
+            'model_paths': packages,
+            'resource_paths': packages,
+            'gzclient': gzclient,
+            'gazebo_version': gazebo_version,
+        },
+        condition=UnlessNodeRunning('gazebo'),
+    )
+    return [gazebo]
+
+
 def declare_actions(
     launch_description: LaunchDescription, launch_args: LaunchArguments
 ):
@@ -85,27 +121,8 @@ def declare_actions(
     launch_description.add_action(public_sim_check)
 
     robot_name = 'omni_base'
-    packages = ['omni_base_description', 'pal_urdf_utils']
 
-    model_path = get_model_paths(packages)
-
-    gazebo_model_path_env_var = SetEnvironmentVariable(
-        'GAZEBO_MODEL_PATH', model_path)
-
-    gazebo = include_scoped_launch_py_description(
-        pkg_name='pal_gazebo_worlds',
-        paths=['launch', 'pal_gazebo.launch.py'],
-        env_vars=[gazebo_model_path_env_var],
-        launch_arguments={
-            'world_name':  launch_args.world_name,
-            'model_paths': packages,
-            'resource_paths': packages,
-            'gzclient': launch_args.gzclient,
-        },
-        condition=UnlessNodeRunning("gazebo"),
-    )
-
-    launch_description.add_action(gazebo)
+    launch_description.add_action(OpaqueFunction(function=start_gazebo))
 
     robot_spawn = include_scoped_launch_py_description(
         pkg_name='omni_base_gazebo',
@@ -117,6 +134,7 @@ def declare_actions(
             'y': launch_args.y,
             'z': launch_args.z,
             'yaw': launch_args.yaw,
+            'gazebo_version': launch_args.gazebo_version,
         }
     )
 
@@ -131,6 +149,7 @@ def declare_actions(
             'add_on_module': launch_args.add_on_module,
             'camera_model': launch_args.camera_model,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'gazebo_version': launch_args.gazebo_version,
             'is_public_sim': launch_args.is_public_sim,
         }
     )
