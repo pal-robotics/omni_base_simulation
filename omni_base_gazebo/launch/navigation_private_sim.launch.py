@@ -178,8 +178,13 @@ def declare_actions(
     launch_description.add_action(slam)
 
     # Docking
+    docking_pkg = PythonExpression([
+        "'stockbot_advanced_docking' if '",
+        LaunchConfiguration('advanced_navigation'),
+        "'=='True' else 'stockbot_docking'",
+    ])
     docking = include_scoped_launch_py_description(
-        pkg_name='omni_base_docking',
+        pkg_name=docking_pkg,
         paths=['launch', 'docking_sim.launch.py'],
         launch_arguments={
             'namespace': launch_args.namespace,
