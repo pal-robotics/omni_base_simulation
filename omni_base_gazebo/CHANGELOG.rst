@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.13.0 (2026-06-02)
+-------------------
 * stores_server log levelwq
 * separate advanced docking
 * Contributors: antoniobrandi
