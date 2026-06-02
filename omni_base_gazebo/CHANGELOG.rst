@@ -2,6 +2,12 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* stores_server log levelwq
+* separate advanced docking
+* Contributors: antoniobrandi
+
 2.12.0 (2026-03-20)
 -------------------
 * fix linting
