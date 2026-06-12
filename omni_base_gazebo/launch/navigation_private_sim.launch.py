@@ -179,9 +179,9 @@ def declare_actions(
 
     # Docking
     docking_pkg = PythonExpression([
-        "'stockbot_advanced_docking' if '",
+        "'omni_base_advanced_docking' if '",
         LaunchConfiguration('advanced_navigation'),
-        "'=='True' else 'stockbot_docking'",
+        "'=='True' else 'omni_base_docking'",
     ])
     docking = include_scoped_launch_py_description(
         pkg_name=docking_pkg,
