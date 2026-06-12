@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix typo
+* Contributors: antoniobrandi
+
 2.13.0 (2026-06-02)
 -------------------
 * stores_server log levelwq
