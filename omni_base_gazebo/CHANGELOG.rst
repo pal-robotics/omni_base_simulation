@@ -2,8 +2,8 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.14.1 (2026-06-22)
+-------------------
 * Add missing ros_gz dependencies
 * Contributors: Noel Jimenez
 
