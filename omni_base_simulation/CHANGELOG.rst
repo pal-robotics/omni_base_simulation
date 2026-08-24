@@ -2,6 +2,9 @@
 Changelog for package omni_base_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.15.0 (2026-07-17)
 -------------------
 

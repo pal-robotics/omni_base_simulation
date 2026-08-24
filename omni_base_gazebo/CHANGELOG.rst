@@ -2,6 +2,11 @@
 Changelog for package omni_base_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added pal_configuration_manager
+* Contributors: antoniobrandi
+
 2.15.0 (2026-07-17)
 -------------------
 * start apps using localization manager
