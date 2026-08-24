@@ -99,6 +99,15 @@ def declare_actions(
     )
     launch_description.add_action(robot_info_publisher)
 
+    pal_configuration_manager = Node(
+        namespace=LaunchConfiguration('namespace'),
+        package='pal_configuration_manager',
+        executable='configuration_manager',
+        name='configuration_manager',
+        output='screen',
+    )
+    launch_description.add_action(pal_configuration_manager)
+
     # Laser Sensors
     laser = include_scoped_launch_py_description(
         pkg_name='omni_base_laser_sensors',
